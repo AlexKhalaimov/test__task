@@ -1,0 +1,169 @@
+.hero {
+   @include row-flex();
+   min-height: 770px;
+   justify-content: space-between;
+   @media screen and (max-width: $mobile-xs) {
+    min-height: 830px;          
+}
+    .imgBlock {
+        @include col();
+        @include size(6);
+        @include size-sm(4);
+        @include size-xs(3);
+        background-image: url(../img/bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0;
+        width: 50%;
+        @media screen and (max-width: $mobile-sm) {
+           width: 27%;
+        }
+        
+    }
+    .content-wrapper {
+        @include col();
+        @include size(6);
+        @include size-sm(8);
+        @include size-xs(10);
+        padding-top: 260px;
+        padding-left: 90px;
+        width: 50%;
+        margin: 0;
+        @media screen and (max-width: $mobile-sm) {
+            padding-top: 250px;
+            padding-left: 30px;
+        }
+        @media screen and (max-width: $mobile-xs) {
+            padding-top: 50px;
+            padding-left: 30px;
+            width: 79%;
+            padding-left: 15px;
+        }
+    }
+    .textBlock {
+        max-width: 305px;
+    }
+}
+
+/* --- Features block --- */
+
+.features {
+    @include row-flex();
+    justify-content: center;
+}
+.featuresBlock {
+    @include col();
+    @include size(9);
+    @include size-sm(12);
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $mobile-xs){
+        flex-direction: column;
+    }
+   &:not(:last-child) {
+    margin-bottom: 50px;
+    @media screen and (max-width: $mobile-sm){
+        margin-bottom: 30px;
+    }
+    @media screen and (max-width: $mobile-xs){
+        margin-bottom: 40px;
+    }
+   }
+    &__figure {
+        @include col();
+        @include size(7);
+        @include size-md(6);
+        @include size-xs(12);
+        @media screen and (max-width: $mobile-xs){
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+    &__img {
+        height: 100%;
+        object-fit: cover;
+        @media screen and (max-width: $mobile-xs){
+            max-height: 240px;
+        }
+    }
+    &__textBlock {
+        @include col();
+        @include size(5);
+        @include size-md(6);
+        @include size-xs(12);
+        padding-top: 60px;
+        padding-left: 50px;
+        margin: 0;
+        @media screen and (max-width: $mobile-sm){
+            padding-top: 28px;
+            padding-left: 11px;
+            padding-right: 15px;
+        }
+        @media screen and (max-width: $mobile-xs){
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 0 0;
+        }
+    }
+}
+
+/* --- Popup block --- */
+
+.popup {
+    
+    max-width: 410px;
+    background-color: rgba($color: $colorInput, $alpha: .9);
+    padding: 78px 54px 30px 60px;
+    border-radius: 10px;
+    position: fixed;
+    top: 152px;
+    left: 50%;
+    transform: translateX(-50%);
+    @media screen and (max-width: $mobile-sm){
+        max-width: 343px;
+        transform: translateX(0);
+        left: auto;
+        right: 4%;
+        top: 190px;
+        padding: 41px 23px 33px 23px;
+    }
+    @media screen and (max-width: $mobile-xs) {
+        top: 157px;
+        width: 100%;
+        right: auto;
+        left: 50%;
+    transform: translateX(-50%);
+    }
+}
+
+.formDownload {
+    display: flex;
+    flex-direction: column;
+    
+    &__label {
+        margin-bottom: 20px;
+    }
+    &__input {
+        width: 100%;
+    }
+    &__download {
+        background-color: $colorSuccess;
+        color: $colorTitle;
+        font-size: 16px;
+        font-weight: 700;
+        border: 1px solid $colorSuccess;
+        padding: 17px 25px;
+        transition: all .3s ease-in-out;
+        margin-bottom: 17px;
+        &:hover, &focus {
+            background-color: #fff;
+
+        }
+    }
+    &__text {
+        font-size: 13px;
+        font-weight: 300;
+        color: $colorText;
+        line-height: 1.74;
+    }
+}

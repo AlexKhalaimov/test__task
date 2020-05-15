@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    &::before, &::after {
+        box-sizing: border-box;
+    }
+}
+body {
+    font-family: $fontMain;
+}
+.popupOpen {
+    position: relative;
+}
+.wrapper {
+    //max-width: 1440px;
+    
+    margin: 0 auto;
+}
+section {
+    padding-bottom: 71px;
+    @media screen and (max-width: $mobile-sm) {
+        padding-bottom: 40px;
+    }
+    @media screen and (max-width: $mobile-xs) {
+        padding-bottom: 10px;          
+    }
+}
+.container {
+    @include wrapper();
+    padding: 0;
+    overflow: hidden;
+}
+.h1 {
+    color: $colorTitle;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -1.1px;
+    @media screen and (max-width: $mobile-xs) {
+        font-size: 26px;
+        line-height: 1.45;
+        margin-bottom: 25px;
+        letter-spacing: -0.9px;
+    }
+}
+.h2 {
+    color: $colorSlogan;
+    line-height: 1.4;
+    font-size: 14px;
+
+}
+.h3 {
+    line-height: 1.55;
+    font-weight: 700;
+    font-size: 22px;
+}
+p {
+    color: $colorText;
+    font-size: 16px;
+    line-height: 1.75;
+}
+a {
+    text-decoration: none;
+}
+.img-responsive {
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+.form {
+    &__label {
+        display: flex;
+        
+    }
+    &__input {
+        border-radius: 6px;
+        padding: 10px 30px;
+        min-height: 48px;
+        border: 1px solid #fff;
+        outline: 0;
+        @include placeholder(){
+            color: $colorInput;
+            font-size: 16px;
+        }
+        &:focus {
+            @include placeholder() {
+                color: transparent;
+            }
+        }
+    }
+    &__download {
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: 0;
+    }
+}
+.error {
+    .form__input {
+        @include placeholder(){
+            color: $colorError;
+            
+        }
+    }
+}
+.textBlock {
+    &__slogan {
+        margin-bottom: 10px;
+        letter-spacing: 1.48333px;
+        text-transform: uppercase;
+    }
+    &__title {
+        margin-bottom: 30px;
+        letter-spacing: -0.5px;
+        @media screen and (max-width: $mobile-xs) {
+            margin-bottom: 17px;
+        }
+        &_main {
+            letter-spacing: -1.1px;
+            @media screen and (max-width: $mobile-xs) {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+.featuresBlock {
+    display: flex;
+    &_rev {
+        flex-direction: row-reverse;
+        .textBlock {
+            padding-left: 0;
+            padding-top: 45px;
+            padding-right: 45px;
+        }
+        @media screen and (max-width: $mobile-sm){
+            flex-direction: row;
+            .textBlock {
+                padding-left: 10px;
+                padding-top: 17px;
+                padding-right: 17px;
+            }
+        }
+        @media screen and (max-width: $mobile-xs){
+            
+            .textBlock {
+                padding-left: 0;
+                padding-top: 20px;
+                padding-right: 0;
+            }
+        }
+    }
+}
